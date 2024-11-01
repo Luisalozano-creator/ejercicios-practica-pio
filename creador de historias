@@ -1,0 +1,47 @@
+import random
+
+# Listas iniciales de personajes, lugares y acciones
+personajes = ["un valiente caballero", "una astuta princesa", "un viejo mago", "un intrépido aventurero"]
+lugares = ["un oscuro bosque", "un antiguo castillo", "una playa soleada", "una montaña nevada"]
+acciones = ["enfrentó a un dragón", "descubrió un tesoro escondido", "salvó a un pueblo", "realizó un hechizo poderoso"]
+
+def agregar_nuevo_elemento():
+    nuevo_lugar = input("Ingresa un nuevo lugar: ")
+    nuevo_accion = input("Ingresa una nueva acción: ")
+    
+    # Añadir nuevos elementos a las listas
+    lugares.append(nuevo_lugar)
+    acciones.append(nuevo_accion)
+    print("Nuevo lugar y acción agregados exitosamente.")
+
+def generar_historia():
+    personaje = random.choice(personajes)
+    lugar = random.choice(lugares)
+    accion = random.choice(acciones)
+    
+    historia = f"{personaje} {accion} en {lugar}."
+    print("\n¡Aquí está tu historia!")
+    print(historia)
+
+def main():
+    while True:
+        print("\nOpciones:")
+        print("1. Agregar nuevo lugar y acción")
+        print("2. Generar historia")
+        print("3. Salir")
+        
+        opcion = input("Elige una opción (1/2/3): ")
+        
+        if opcion == "1":
+            agregar_nuevo_elemento()
+        elif opcion == "2":
+            generar_historia()
+        elif opcion == "3":
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida. Por favor, elige nuevamente.")
+
+# Iniciar el programa
+if __name__ == "__main__":
+    main()
